@@ -5,7 +5,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../../common/styles/spacing_styles.dart';
 import '../../../../../utils/constants/HSizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
-import '../../foget_password/ForgetPassword.dart';
+import '../../foget_password/forget_password.dart';
 
 
 class LoginForm extends StatelessWidget {
@@ -55,7 +55,7 @@ class LoginForm extends StatelessWidget {
                 /// Forgot password
 
                 TextButton(
-                    onPressed: ()=> Get.to(()=> const ForgotPassword()),
+                    onPressed: ()=> Get.to(()=> const ForgotPasswordScreen()),
                     child: const Text(HTexts.forgetPassword))
               ],
             ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:halalrestaurants/features/authentication/screens/reset_password/reset_password.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/styles/spacing_styles.dart';
@@ -42,7 +44,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   child: SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: ()=> Get.to(()=> const ResetPasswordScreen()),
                           child: Text(HTexts.sendCode,
                               style: Theme.of(context).textTheme.headlineSmall))),
                 ),

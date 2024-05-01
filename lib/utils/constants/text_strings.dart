@@ -14,6 +14,12 @@ class HTexts{
   static const String userName="User name";
   static const String phoneNumber="Phone number";
   static const String sendCode="Send Code";
+  static const String resetPassword="Reset Password";
+  static const String passwordChanged="Password Changed";
+  static const String backToLogin="Back to login";
+  static const String passwordChangedSubTitle="Your Password has been changed successfully";
+  static const String confirmPassword="Confirm password";
+  static const String resetPasswordSubTitle="Please type something you’ll remember";
   static const String forgotPasswordSubTitle="Don’t worry! It happens. Please enter the email associated with your account.";
   static const String alreadyHaveAccount="Already have an account?";
 
