@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/styles/spacing_styles.dart';
 import '../../../../../utils/constants/HSizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
+import '../../foget_password/ForgetPassword.dart';
 
 
 class LoginForm extends StatelessWidget {
@@ -53,7 +55,7 @@ class LoginForm extends StatelessWidget {
                 /// Forgot password
 
                 TextButton(
-                    onPressed: () {},
+                    onPressed: ()=> Get.to(()=> const ForgotPassword()),
                     child: const Text(HTexts.forgetPassword))
               ],
             ),
@@ -63,7 +65,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {}, child: Text(HTexts.login,style: Theme.of(context).textTheme.headlineSmall)))
+                    onPressed: (){}, child: Text(HTexts.login,style: Theme.of(context).textTheme.headlineSmall)))
           ],
         ),
       ),

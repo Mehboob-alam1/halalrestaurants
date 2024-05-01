@@ -13,6 +13,8 @@ class HTexts{
   static const String createAnAccount="Create an account";
   static const String userName="User name";
   static const String phoneNumber="Phone number";
+  static const String sendCode="Send Code";
+  static const String forgotPasswordSubTitle="Don’t worry! It happens. Please enter the email associated with your account.";
   static const String alreadyHaveAccount="Already have an account?";
 
 

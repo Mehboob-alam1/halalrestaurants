@@ -9,4 +9,10 @@ class HSpacingStyle {
     right: HSizes.defaultSpace,
     bottom: HSizes.defaultSpace,
   );
+
+  static const EdgeInsetsGeometry paddingNotOnlyTop = EdgeInsets.only(
+    left: HSizes.defaultSpace,
+    right: HSizes.defaultSpace,
+    bottom: HSizes.defaultSpace,
+  );
 }

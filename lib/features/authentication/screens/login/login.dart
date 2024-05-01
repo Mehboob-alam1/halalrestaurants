@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:halalrestaurants/common/widgets/pattern/lower_pattern.dart';
 import 'package:halalrestaurants/common/widgets/pattern/upper_pattern.dart';
 import 'package:halalrestaurants/features/authentication/screens/login/widgets/login_form.dart';
+import 'package:halalrestaurants/features/authentication/screens/signup/sign_up.dart';
 import 'package:halalrestaurants/utils/constants/HSizes.dart';
 import 'package:halalrestaurants/utils/constants/image_string.dart';
 import 'package:halalrestaurants/utils/constants/text_strings.dart';
@@ -25,25 +27,25 @@ class LoginScreen extends StatelessWidget {
 
             SizedBox(
               height: HHelperFunctions.screenHeight(),
-              child: const Center(
+              child:  Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    HHeader(image: HImages.appLogo,text: HTexts.login),
-                    LoginForm(),
+                    const HHeader(image: HImages.appLogo,text: HTexts.login),
+                    const LoginForm(),
 
                     /// Divider
 
-                    HFormDivider(dividerText: HTexts.continueWithLogin),
+                    const HFormDivider(dividerText: HTexts.continueWithLogin),
 
-                    SizedBox(height: HSizes.spaceBtwSections),
+                    const SizedBox(height: HSizes.spaceBtwSections),
 
-                    HLogoTextOutlinedButton(logo: HImages.googleLogo,text: HTexts.loginGoogle),
+                    const HLogoTextOutlinedButton(logo: HImages.googleLogo,text: HTexts.loginGoogle),
 
                     /// Footer
 
-                    SizedBox(height: HSizes.spaceBtwItems),
-                    FooterText(firstText: HTexts.dontAccount,secondText:HTexts.signUp)
+                    const SizedBox(height: HSizes.spaceBtwItems),
+                    FooterText(firstText: HTexts.dontAccount,secondText:HTexts.signUp,onTap: ()=> Get.to(()=> const SignUp()),)
                   ],
                 ),
               ),

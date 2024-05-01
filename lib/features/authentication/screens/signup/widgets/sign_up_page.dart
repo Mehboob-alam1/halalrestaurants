@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:halalrestaurants/features/authentication/screens/login/login.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/styles/spacing_styles.dart';
@@ -90,7 +92,7 @@ class SignUpPage extends StatelessWidget {
                       const HLogoTextOutlinedButton(logo: HImages.googleLogo,text: HTexts.loginGoogle,padding: EdgeInsets.zero,),
 
                       const SizedBox(height: HSizes.spaceBtwItems),
-                      const FooterText(firstText: HTexts.alreadyHaveAccount, secondText: HTexts.login),
+                       FooterText(firstText: HTexts.alreadyHaveAccount, secondText: HTexts.login,onTap:()=> Get.off(()=>const LoginScreen()),),
                     ],
                   ),
                 ),
