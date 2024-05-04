@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:halalrestaurants/features/authentication/screens/login/login.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -24,15 +23,12 @@ class ResetPasswordPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HHeader(image: HImages.appLogo, text: HTexts.resetPassword),
-            SizedBox(height: HSizes.spaceBtwItems),
+            const HHeader(image: HImages.appLogo, text: HTexts.resetPassword),
+            const SizedBox(height: HSizes.spaceBtwItems),
             Text(
               HTexts.resetPasswordSubTitle,
               textAlign: TextAlign.center,
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .titleSmall,
+              style: Theme.of(context).textTheme.titleSmall,
             ),
             const SizedBox(height: HSizes.spaceBtwItems),
 
@@ -52,26 +48,24 @@ class ResetPasswordPage extends StatelessWidget {
                   labelText: HTexts.confirmPassword,
                   suffixIcon: Icon(Iconsax.eye_slash)),
             ),
-             SizedBox(height: HSizes.spaceBtwSections),
+            const SizedBox(height: HSizes.spaceBtwSections),
             Padding(
               padding: HSpacingStyle.paddingNotOnlyTop,
               child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () =>
-                          Get.to(() =>
-                           SuccessScreen(
-                            image: HImages.appLogo,
-                            title:HTexts.passwordChanged,
-                            subTitle: HTexts.passwordChangedSubTitle,
-                            buttonText: HTexts.backToLogin,
-                            onPressed: ()=>Get.offAll(()=> const LoginScreen()),
-                          ),),
+                      onPressed: () => Get.to(
+                            () => SuccessScreen(
+                              image: HImages.appLogo,
+                              title: HTexts.passwordChanged,
+                              subTitle: HTexts.passwordChangedSubTitle,
+                              buttonText: HTexts.backToLogin,
+                              onPressed: () =>
+                                  Get.offAll(() => const LoginScreen()),
+                            ),
+                          ),
                       child: Text(HTexts.resetPassword,
-                          style: Theme
-                              .of(context)
-                              .textTheme
-                              .headlineSmall))),
+                          style: Theme.of(context).textTheme.headlineSmall))),
             ),
           ],
         ),

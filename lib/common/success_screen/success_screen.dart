@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:halalrestaurants/common/styles/spacing_styles.dart';
 import 'package:halalrestaurants/common/widgets/pattern/lower_pattern.dart';
 import 'package:halalrestaurants/common/widgets/pattern/upper_pattern.dart';
-import 'package:halalrestaurants/utils/constants/image_string.dart';
 
 import '../../utils/constants/HSizes.dart';
-import '../../utils/constants/text_strings.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key, required this.image, required this.title, required this.subTitle, required this.buttonText, required this.onPressed});
+  const SuccessScreen({super.key,
+    required this.image,
+    required this.title,
+    required this.subTitle,
+    required this.buttonText,
+    required this.onPressed});
 
   final String image;
   final String title;
@@ -21,10 +24,8 @@ class SuccessScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          UpperPattern(),
-          LowerPattern(),
-
-
+          const UpperPattern(),
+          const LowerPattern(),
           Center(
             child: Padding(
               padding: HSpacingStyle.paddingWithAppBarHeight,
@@ -42,14 +43,14 @@ class SuccessScreen extends StatelessWidget {
                    title,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
-                  SizedBox(height: HSizes.spaceBtwSections),
+                  const SizedBox(height: HSizes.spaceBtwSections),
                   Text(
                     subTitle,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
 
-                  SizedBox(height: HSizes.spaceBtwSections),
+                  const SizedBox(height: HSizes.spaceBtwSections),
 
                   Padding(
                     padding: HSpacingStyle.paddingNotOnlyTop,

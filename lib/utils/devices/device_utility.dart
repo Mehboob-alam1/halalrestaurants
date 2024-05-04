@@ -6,9 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-
-
-class HDeviceUtils{
+class HDeviceUtils {
 
 
   static void hideKeyboard(BuildContext context){

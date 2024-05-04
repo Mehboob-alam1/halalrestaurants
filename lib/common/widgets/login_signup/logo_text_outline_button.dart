@@ -6,7 +6,10 @@ import '../../../utils/constants/HSizes.dart';
 
 class HLogoTextOutlinedButton extends StatelessWidget {
   const HLogoTextOutlinedButton({
-    super.key, required this.logo, required this.text, this.padding=const EdgeInsets.symmetric(horizontal: HSizes.defaultSpace),
+    super.key,
+    required this.logo,
+    required this.text,
+    this.padding=const EdgeInsets.symmetric(horizontal: HSizes.defaultSpace),
   });
 
   final String logo;

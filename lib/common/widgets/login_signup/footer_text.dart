@@ -21,16 +21,16 @@ class FooterText extends StatelessWidget {
       children: [
         Text(firstText, style: Theme.of(context).textTheme.bodyMedium),
         const SizedBox(width: HSizes.defaultSpace / 2),
-         GestureDetector(
- onTap: onTap,
-           child: Text(
+        GestureDetector(
+          onTap: onTap,
+          child: Text(
             secondText,
             style: const TextStyle(
                 decoration: TextDecoration.underline,
                 color: Colors.blue,
                 fontWeight: FontWeight.bold),
-                   ),
-         ),
+          ),
+        ),
       ],
     );
   }

@@ -20,9 +20,9 @@ class HFormDivider extends StatelessWidget {
       children: [
         Flexible(
           child: Divider(
-            thickness: 0.5,
             color: dark ?HColors.darkerGrey: HColors.grey,
-            indent: 60,
+            indent: 60,            thickness: 0.5,
+
             endIndent: 5,
           ),
         ),
