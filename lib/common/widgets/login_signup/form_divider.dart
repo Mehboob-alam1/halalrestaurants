@@ -7,7 +7,8 @@ import '../../../utils/constants/HSizes.dart';
 
 class HFormDivider extends StatelessWidget {
   const HFormDivider({
-    super.key, required this.dividerText,
+    super.key,
+    required this.dividerText,
   });
 
   final String dividerText;

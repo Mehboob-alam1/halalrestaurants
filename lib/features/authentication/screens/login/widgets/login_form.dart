@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:halalrestaurants/navigation_menu.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/styles/spacing_styles.dart';
@@ -65,7 +66,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: (){}, child: Text(HTexts.login,style: Theme.of(context).textTheme.headlineSmall)))
+                    onPressed: () => Get.to(()=> const NavigationMenu()), child: Text(HTexts.login,style: Theme.of(context).textTheme.headlineSmall)))
           ],
         ),
       ),
