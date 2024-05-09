@@ -4,6 +4,7 @@ import 'package:halalrestaurants/utils/themes/theme.dart';
 
 import 'features/authentication/screens/start/start.dart';
 
+
 class App extends StatelessWidget {
   const App({super.key});
 

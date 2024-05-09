@@ -6,15 +6,17 @@ import 'package:halalrestaurants/utils/themes/custom_themes/outlined_button_them
 import 'package:halalrestaurants/utils/themes/custom_themes/text_field_theme.dart';
 import 'package:halalrestaurants/utils/themes/custom_themes/text_theme.dart';
 
+import '../constants/colors.dart';
+
 class HAppTheme {
   HAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
       useMaterial3: true,
-      fontFamily: 'Manrope',
+      fontFamily: 'Poppins',
       brightness: Brightness.light,
-      primaryColor: Colors.green,
-      scaffoldBackgroundColor: Colors.white,
+      primaryColor: HColors.primary,
+      scaffoldBackgroundColor: HColors.white,
       textTheme: HTextTheme.lightTextTheme,
       elevatedButtonTheme: HElevatedButtonTheme.lightElevatedButtonTheme,
       outlinedButtonTheme: HOutlinedButtonTheme.lightOutlinedButtonTheme,
@@ -24,10 +26,10 @@ class HAppTheme {
 
   static ThemeData darkTheme = ThemeData(
       useMaterial3: true,
-      fontFamily: 'Manrope',
+      fontFamily: 'Poppins',
       brightness: Brightness.dark,
-      primaryColor: Colors.green,
-      scaffoldBackgroundColor: Colors.black,
+      primaryColor: HColors.primary,
+      scaffoldBackgroundColor: HColors.black,
       checkboxTheme: HCheckBoxTheme.darkCheckboxTheme,
       textTheme: HTextTheme.darkTextTheme,
       elevatedButtonTheme: HElevatedButtonTheme.darkElevatedButtonTheme,

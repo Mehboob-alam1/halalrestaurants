@@ -50,7 +50,10 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
+
             const LowerPattern(),
+
+
           ],
         ),
       ),

@@ -30,7 +30,7 @@ class MiddleSection extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: ()=>Get.to(()=>const LoginScreen()),
-                    child:   Text(HTexts.login,style: Theme.of(context).textTheme.headlineSmall),
+                    child:   const Text(HTexts.login),
                   ),
                 ),
                 const SizedBox(height: HSizes.spaceBtwInputFields),
@@ -39,7 +39,7 @@ class MiddleSection extends StatelessWidget {
 
                   child: OutlinedButton(
                     onPressed: () => Get.to(() => const SignUp()),
-                    child:  Text(HTexts.signUp,style:Theme.of(context).textTheme.headlineSmall),
+                    child:  Text(HTexts.signUp,style:Theme.of(context).textTheme.bodyLarge),
                   ),
                 ),
               ],

@@ -9,6 +9,7 @@ class HSizes{
   static const double lg = 24.0;
   static const double xl = 32.0;
 
+
   // Icon sizes
   static const double iconXs = 12.0;
   static const double iconSm = 16.0;

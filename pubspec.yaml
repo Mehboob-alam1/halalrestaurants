@@ -19,6 +19,7 @@ dependencies:
   logger: ^2.0.1
   url_launcher: ^6.1.12
   flutter_native_splash: ^2.3.2
+  carousel_slider: ^4.2.1
 
   #Icons
   iconsax: ^0.0.8
@@ -50,9 +51,22 @@ flutter:
 
 
   fonts:
-    - family: Manrope
+    - family: Poppins
       fonts:
-        - asset: assets/fonts/Manrope-VariableFont_wght.ttf
-
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 800
 
 

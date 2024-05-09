@@ -11,6 +11,7 @@ class HImages{
   static const String bannerMain="assets/images/banner_main.png";
 
   static const String googleLogo="assets/logos/google_logo.png";
+  static const String promoBanner1="assets/images/promoBanner.png";
 
 
 
