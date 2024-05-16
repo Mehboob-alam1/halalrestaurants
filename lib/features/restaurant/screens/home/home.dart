@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+
         child: Padding(
           padding: HSpacingStyle.paddingWithAppBarHeight,
           child: Column(
@@ -28,53 +29,60 @@ class HomeScreen extends StatelessWidget {
                 text: 'Search restaurants',
               ),
               const SizedBox(height: HSizes.spaceBtwItems),
-              const HSectionHeading(
-                  title: 'Top-rated restaurant', showActionButton: false),
+              const HSectionHeading(title: 'Top-rated restaurant', showActionButton: false),
               const SizedBox(height: HSizes.spaceBtwItems),
               SizedBox(
-                height: 300,
+
                 child: Stack(
                   children: [
                     Image.asset(HImages.promoBanner1),
                     Positioned(
-                        top: HSizes.md,
-                        left: HSizes.md,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Special offer\nfor march',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineSmall!
-                                  .apply(color: HColors.white),
-                            ),
-
-                            Text(
-                              'We are here with the Best Restaurant in town.',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelSmall!
-                                  .apply(color: HColors.white),
-                            ),
-                            SizedBox(
-                              height: HSizes.spaceBtwItems ,
-                            ),
-                            SizedBox(
-                              width: 120,
-
-                              child: TextButton(
-                                style: TextButton.styleFrom(backgroundColor: HColors.white,side: BorderSide.none),
-
-                                onPressed: () {},
-                                child: Text('Explore Now',style: Theme.of(context).textTheme.labelSmall,),
+                      top: HSizes.md,
+                      left: HSizes.md,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Special offer\nfor march',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .apply(color: HColors.white),
+                          ),
+                          Text(
+                            'We are here with the Best Restaurant in town.',
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelSmall!
+                                .apply(color: HColors.white),
+                          ),
+                          const SizedBox(
+                            height: HSizes.spaceBtwItems,
+                          ),
+                          SizedBox(
+                            width: 120,
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                  backgroundColor: HColors.white,
+                                  side: BorderSide.none),
+                              onPressed: () {},
+                              child: Text(
+                                'Explore Now',
+                                style: Theme.of(context).textTheme.labelSmall,
                               ),
-                            )
-                          ],
-                        ))
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-              )
+              ),
+
+              const SizedBox(height: HSizes.defaultSpace),
+              HSectionHeading(title: 'Popular Cuisines',showActionButton: true,onPressed: (){},),
+
+
             ],
           ),
         ),

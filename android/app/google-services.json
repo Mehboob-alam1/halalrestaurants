@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "169834832987",
+    "project_id": "flutter-o-2d456",
+    "storage_bucket": "flutter-o-2d456.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169834832987:android:39208e6e82775fb051cb7e",
+        "android_client_info": {
+          "package_name": "com.asiya.halalrestaurants"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169834832987-m9obmkvokc397n8e96dn9up159m01ld0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.asiya.halalrestaurants",
+            "certificate_hash": "aa08af46bb41b22985eff360a5afc9d389b283c0"
+          }
+        },
+        {
+          "client_id": "169834832987-o04i0qhcq70m68b750tu71kgs0aufc7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQfKN7xZen0i4meRx8JsL7dIUhZjzVqp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169834832987-o04i0qhcq70m68b750tu71kgs0aufc7h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "169834832987-hppmtr1l816t7e0pm4fvhdmfugsnr1j0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.asiya.halalrestaurants"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:halalrestaurants/utils/constants/colors.dart';
 
 import '../../../utils/constants/HSizes.dart';
 

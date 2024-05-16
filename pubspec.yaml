@@ -31,6 +31,9 @@ dependencies:
   get: ^4.6.6
   get_storage: ^2.1.1
 
+  # Firebase
+  firebase_core: ^2.27.0
+
 
 
 dev_dependencies:

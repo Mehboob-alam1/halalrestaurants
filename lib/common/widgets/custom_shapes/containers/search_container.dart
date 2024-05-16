@@ -6,7 +6,13 @@ import 'package:halalrestaurants/utils/helpers/helper_funtions.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HSearchContainer extends StatelessWidget {
-  const HSearchContainer({super.key, required this.padding, required this.showBackground, required this.showBorder, required this.text});
+  const HSearchContainer({
+    super.key,
+    required this.padding,
+    required this.showBackground,
+    required this.showBorder,
+    required this.text
+  });
 
   final EdgeInsetsGeometry padding;
   final bool showBackground,showBorder;
@@ -18,7 +24,7 @@ class HSearchContainer extends StatelessWidget {
     final dark = HHelperFunctions.isDarkMode(context);
     return Container(
       width: HDeviceUtils.getScreenWidth(context),
-      padding: EdgeInsets.all(HSizes.md),
+      padding: const EdgeInsets.all(HSizes.md),
       decoration: BoxDecoration(
         color: showBackground? dark ? HColors.dark :HColors.light :Colors.transparent,
         borderRadius: BorderRadius.circular(HSizes.cardRadiusSm),
@@ -26,7 +32,7 @@ class HSearchContainer extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(Iconsax.search_normal,color: HColors.darkerGrey,),
+          const Icon(Iconsax.search_normal,color: HColors.darkerGrey,),
           const SizedBox(width: HSizes.spaceBtwItems),
           Text(
             text,
