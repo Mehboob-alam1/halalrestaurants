@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:halalrestaurants/bindings/general_bindings.dart';
 import 'package:halalrestaurants/utils/themes/theme.dart';
 
 import 'features/authentication/screens/start/start.dart';
@@ -14,6 +15,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: HAppTheme.lightTheme,
       darkTheme: HAppTheme.darkTheme,
+      initialBinding: GeneralBindings(),
       home: const StartScreen(),
     );
   }

@@ -12,6 +12,10 @@ class HImages{
 
   static const String googleLogo="assets/logos/google_logo.png";
   static const String promoBanner1="assets/images/promoBanner.png";
+  static const String loadingSearch="assets/animations/loading_search.json";
+  static const String deliveredEmailIllustration = "assets/animations/sammy-line-man-receives-a-mail.png";
+  static const String staticSuccessIllustration = "assets/animations/sammy-line-success.png";
+
 
 
 

@@ -22,7 +22,8 @@ class MiddleSection extends StatelessWidget {
           children: [
             Image.asset(
               HImages.appLogo,
-              height: 100,
+              height: 150,
+              width: 150,
             ),
             Column(
               children: [

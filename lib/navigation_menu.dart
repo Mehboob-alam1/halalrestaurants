@@ -33,7 +33,7 @@ class NavigationMenu extends StatelessWidget {
   }
 }
 
-class NavigationController extends GetxController{
+class NavigationController extends GetxController {
 
   final Rx<int> selectedIndex = 0.obs;
 

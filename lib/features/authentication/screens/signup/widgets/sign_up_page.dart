@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:halalrestaurants/features/authentication/screens/login/login.dart';
+import 'package:halalrestaurants/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../common/styles/spacing_styles.dart';
@@ -24,83 +25,22 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: HHelperFunctions.screenHeight(),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const HHeader(
-                image: HImages.appLogo, text: HTexts.createAnAccount),
-            Center(
-              child: Form(
-                child: Padding(
-                  padding: HSpacingStyle.paddingWithAppBarHeight,
-                  child: Column(
-                    children: [
-                      /// User Name
-                      TextFormField(
-                        decoration: const InputDecoration(
-                            prefixIcon: Icon(Iconsax.user),
-                            labelText: HTexts.userName),
-                      ),
+      child: const Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
 
-                      const SizedBox(
-                          height: HSizes.spaceBtwInputFields),
-
-                      /// Email
-                      TextFormField(
-                        decoration: const InputDecoration(
-                            prefixIcon: Icon(Iconsax.direct_right),
-                            labelText: HTexts.email),
-                      ),
-                      const SizedBox(
-                          height: HSizes.spaceBtwInputFields),
-
-                      ///  Phone Number
-                      TextFormField(
-                        keyboardType: TextInputType.number,
-                        inputFormatters: <TextInputFormatter>[
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
-                        decoration: const InputDecoration(
-                            prefixIcon: Icon(Iconsax.mobile),
-                            labelText: HTexts.phoneNumber),
-                      ),
-                      const SizedBox(
-                          height: HSizes.spaceBtwInputFields),
-
-                      /// Password
-
-                      TextFormField(
-                        decoration: const InputDecoration(
-                            prefixIcon: Icon(Iconsax.password_check),
-                            labelText: HTexts.password,
-                            suffixIcon: Icon(Iconsax.eye_slash)),
-                      ),
-
-                      const SizedBox(height: HSizes.spaceBtwSections),
-
-                      SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                              onPressed: () {},
-                              child: Text(HTexts.signUp,
-                                  style: Theme.of(context).textTheme.headlineSmall))),
-
-                      const SizedBox(height: HSizes.spaceBtwItems),
-                      const HFormDivider(dividerText: HTexts.continueWithLogin),
-                      const SizedBox(height: HSizes.spaceBtwSections),
-                      const HLogoTextOutlinedButton(logo: HImages.googleLogo,text: HTexts.loginGoogle,padding: EdgeInsets.zero,),
-
-                      const SizedBox(height: HSizes.spaceBtwItems),
-                       FooterText(firstText: HTexts.alreadyHaveAccount, secondText: HTexts.login,onTap:()=> Get.off(()=>const LoginScreen()),),
-                    ],
-                  ),
-                ),
-              ),
-            )
-          ],
+            children: [
+              HHeader(
+                  image: HImages.appLogo, text: HTexts.createAnAccount),
+              Center(
+                child: SignUpForm(),
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
