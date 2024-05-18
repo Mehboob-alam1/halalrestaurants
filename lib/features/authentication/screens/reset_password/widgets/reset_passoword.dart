@@ -58,8 +58,8 @@ class ResetPasswordPage extends StatelessWidget {
                             () => SuccessScreen(
                               image: HImages.appLogo,
                               title: HTexts.passwordChanged,
-                              subTitle: HTexts.passwordChangedSubTitle,
-                              buttonText: HTexts.backToLogin,
+                              subtitle: HTexts.passwordChangedSubTitle,
+
                               onPressed: () =>
                                   Get.offAll(() => const LoginScreen()),
                             ),

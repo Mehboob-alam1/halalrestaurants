@@ -15,6 +15,7 @@ class HImages{
   static const String loadingSearch="assets/animations/loading_search.json";
   static const String deliveredEmailIllustration = "assets/animations/sammy-line-man-receives-a-mail.png";
   static const String staticSuccessIllustration = "assets/animations/sammy-line-success.png";
+  static const String successAnimation = "assets/animations/success.json";
 
 
 

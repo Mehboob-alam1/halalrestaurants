@@ -4,11 +4,14 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:halalrestaurants/features/authentication/screens/start/start.dart';
+import 'package:halalrestaurants/features/restaurant/screens/home/home.dart';
+import 'package:halalrestaurants/navigation_menu.dart';
 import 'package:halalrestaurants/utils/exceptions/firebase_exceptions.dart';
 import 'package:halalrestaurants/utils/exceptions/format_exceptions.dart';
 import 'package:halalrestaurants/utils/exceptions/platform_exceptions.dart';
 
 import '../../../features/authentication/screens/login/login.dart';
+import '../../../features/authentication/screens/signup/verify_email.dart';
 import '../../../utils/exceptions/firebase_auth_exceptions.dart';
 
 class AuthenticationRepository extends GetxController {
@@ -25,8 +28,19 @@ class AuthenticationRepository extends GetxController {
     screenRedirect();
   }
 
+
   screenRedirect() async {
-    Get.offAll(const StartScreen());
+    final user=_auth.currentUser;
+    if(user!=null){
+      if(user.emailVerified){
+        Get.offAll(()=> const NavigationMenu());
+      }else{
+        Get.offAll(()=> VerifyEmailScreen(email: _auth.currentUser?.email));
+      }
+    }else{
+      Get.offAll(const StartScreen());
+    }
+
   }
 
   /// [EMAIL AUTHENTICATION] -REGISTER
@@ -40,10 +54,29 @@ class AuthenticationRepository extends GetxController {
         throw HFirebaseAuthException(e.code).message;
     }on FirebaseException catch(e){
       throw HFirebaseException(e.code).message;
-    }on FormatException catch(e){
+    }on FormatException catch(_){
       throw const HFormatException();
     }on PlatformException catch(e){
       throw HPlatformException(e.code).message;
+    }catch(e){
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+
+  /// [EmailVerification] - MAIL VERIFICATION
+
+  Future<void> sendEmailVerification() async{
+    try{
+      await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch(e){
+      throw HFirebaseAuthException(e.code).message;
+    } on FirebaseException catch(e){
+      throw HFirebaseException(e.code).message;
+    } on PlatformException catch (e){
+      throw  HPlatformException(e.code).message;
+    } on FormatException catch(_){
+      throw const FormatException();
     }catch(e){
       throw 'Something went wrong. Please try again.';
     }
@@ -69,4 +102,6 @@ class AuthenticationRepository extends GetxController {
       throw 'Something went wrong. Please try again';
     }
   }
+
+
 }

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
+import 'package:halalrestaurants/features/authentication/controllers/signup/verify_email_controller.dart';
 
 import '../../../../data/repositories/authentication/authentication_repository.dart';
 import '../../../../utils/constants/HSizes.dart';
@@ -17,9 +18,7 @@ class VerifyEmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    ///TODO
-    /// add the controller
-    final controller = Get.put(());
+    final controller = Get.put(VerifyEmailController());
 
     return Scaffold(
       appBar: AppBar(
@@ -55,7 +54,7 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => controller.checkEmailVerificationStatus(),
+                  onPressed: () =>controller.checkEmailVerificationStatus(),
                   child: const Text(HTexts.tContinue),
                 ),
               ),

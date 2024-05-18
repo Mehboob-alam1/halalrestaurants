@@ -1,5 +1,8 @@
 
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:halalrestaurants/utils/formatters/formatter.dart';
+
 class UserModel {
   String id;
   String name;
@@ -14,6 +17,10 @@ class UserModel {
     required this.email,
     required this.password,
     required this.profilePicture});
+
+  /// Helper function to format phone number
+
+  String get formattedPhoneNo=>HFormatter.formatPhoneNumber(phoneNumber);
 
 
   /// static function to create an empty user model
@@ -43,7 +50,7 @@ class UserModel {
 
 
 
-//
+
 // factory UserModel.fromSnapshot(DocumentSnapshot<Map<String,dynamic>> document){
 //
 //   if(document.data() !=null){
@@ -52,9 +59,10 @@ class UserModel {
 //     return UserModel(
 //       id: document.id,
 //       name: data?['Name'] ?? '',
-//       userName: data?['UserName'] ?? '',
+//       phoneNumber: data?['Phone'] ?? '',
 //       email: data?['Email'] ?? '',
 //       password: data?['Password'] ??'',
+//       profilePicture:  ''
 //     );
 //   }
 //   }
