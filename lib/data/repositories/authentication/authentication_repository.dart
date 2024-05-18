@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:halalrestaurants/features/authentication/screens/start/start.dart';
 import 'package:halalrestaurants/navigation_menu.dart';
 import 'package:halalrestaurants/utils/exceptions/firebase_exceptions.dart';
@@ -113,6 +115,42 @@ class AuthenticationRepository extends GetxController {
       throw HPlatformException(e.code).message;
     } catch (e) {
       throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  /// [GoogleAuthentication] - GOOGLE
+
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      //Trigger the authentication flow
+
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+
+      // Obtain the auth details from the request
+
+      final GoogleSignInAuthentication? googleAuth =
+          await userAccount?.authentication;
+
+      // Create a new credential
+
+      final credentials = GoogleAuthProvider.credential(accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+
+      // Once signed in , return the user credential
+
+      return  await _auth.signInWithCredential(credentials);
+
+    } on FirebaseAuthException catch (e) {
+      throw HFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw HFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const HFormatException();
+    } on PlatformException catch (e) {
+      throw HPlatformException(e.code).message;
+    } catch (e) {
+
+      if (kDebugMode) print('Something went wrong: $e');
+      return null;
     }
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:halalrestaurants/features/authentication/controllers/login/login_controller.dart';
 
 import '../../../utils/constants/HSizes.dart';
 
@@ -17,13 +19,14 @@ class HLogoTextOutlinedButton extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   @override
   Widget build(BuildContext context) {
+    final controller= Get.put(LoginController());
     return Padding(
       padding:
       padding,
       child: SizedBox(
         width: double.infinity,
         child: OutlinedButton(
-          onPressed: () {},
+          onPressed: () =>controller.googleSignIn(),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

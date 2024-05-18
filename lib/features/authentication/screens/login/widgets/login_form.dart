@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:halalrestaurants/features/authentication/controllers/login/login_controller.dart';
-import 'package:halalrestaurants/navigation_menu.dart';
 import 'package:halalrestaurants/utils/validators/validation.dart';
 import 'package:iconsax/iconsax.dart';
 
