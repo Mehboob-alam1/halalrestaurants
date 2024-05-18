@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:halalrestaurants/common/widgets/pattern/lower_pattern.dart';
 import 'package:halalrestaurants/common/widgets/pattern/upper_pattern.dart';
-import 'package:halalrestaurants/features/authentication/screens/foget_password/widgets/fogot_page.dart';
+import 'package:halalrestaurants/features/authentication/screens/forget_password/widgets/fogot_page.dart';
 
 
 class ForgotPasswordScreen extends StatelessWidget {
