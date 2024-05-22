@@ -22,6 +22,7 @@ class HAppBar extends StatelessWidget implements PreferredSizeWidget{
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: HSizes.md),
       child: AppBar(
+        elevation: 30,
         automaticallyImplyLeading: false,
 
         leading: showBackArrow

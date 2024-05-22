@@ -22,21 +22,15 @@ class HTexts{
   static const String resetPasswordSubTitle="Please type something you’ll remember";
   static const String forgotPasswordSubTitle="Don’t worry! It happens. Please enter the email associated with your account.";
   static const String alreadyHaveAccount="Already have an account?";
-
-
-  static const String  confirmEmail='Confirm Email';
-
+  static const String confirmEmail='Confirm Email';
   static const String confirmEmailSubTitle='Congratulations! Your account Awaits verify your email to start';
-
   static const String tContinue='Continue';
-
   static const String yourAccountCreatedTitle='Your account successfully created!';
-
-  static const String  yourAccountCreatedSubTitle='Welcome to your ultimate drinking account. Your account is created. Unleash the joy';
-
+  static const String yourAccountCreatedSubTitle='Welcome to your ultimate drinking account. Your account is created. Unleash the joy';
   static const String resendEmail='Resend Email';
   static const String rememberMeEmail='REMEMBER_ME_EMAIL';
   static const String rememberMePassword='REMEMBER_ME_PASSWORD';
+
 
 
 }

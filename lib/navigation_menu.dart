@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:halalrestaurants/features/personalization/screens/settings/settings.dart';
 import 'package:halalrestaurants/features/restaurant/screens/home/home.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -42,6 +43,6 @@ class NavigationController extends GetxController {
     Container(color: Colors.purple),
 
     Container(color: Colors.orange),
-    Container(color: Colors.blue),
+    const SettingScreen(),
   ];
 }
