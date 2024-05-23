@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:halalrestaurants/common/styles/spacing_styles.dart';
 import 'package:halalrestaurants/common/widgets/appbar/app_bar.dart';
 import 'package:halalrestaurants/common/widgets/text/section_heading.dart';
+import 'package:halalrestaurants/features/personalization/screens/settings/profile/profile.dart';
 import 'package:halalrestaurants/features/personalization/screens/settings/widgets/profile_menu_icon.dart';
 import 'package:halalrestaurants/utils/constants/HSizes.dart';
 import 'package:halalrestaurants/utils/constants/image_string.dart';
@@ -30,23 +31,23 @@ class SettingScreen extends StatelessWidget {
           children: [
             const HSectionHeading(title: 'Account',showActionButton: false),
 
-            SizedBox(height: HSizes.defaultSpace),
+            const SizedBox(height: HSizes.defaultSpace),
 
-            HProfileMenuIcon(icon: Iconsax.user, text: 'Profile'),
-            HProfileMenuIcon(icon: Iconsax.lock_1, text: 'Password'),
-            HProfileMenuIcon(icon: Iconsax.notification, text: 'Notifications'),
+            HProfileMenuIcon(icon: Iconsax.user, text: 'Profile', onPressed: ()=> Get.to(const ProfileScreen())),
+            HProfileMenuIcon(icon: Iconsax.lock_1, text: 'Password', onPressed: () {  },),
+            HProfileMenuIcon(icon: Iconsax.notification, text: 'Notifications', onPressed: () {  },),
 
-            SizedBox(height: HSizes.defaultSpace),
+            const SizedBox(height: HSizes.defaultSpace),
 
             const HSectionHeading(title: 'Categories',showActionButton: false),
 
-            SizedBox(height: HSizes.defaultSpace),
+            const SizedBox(height: HSizes.defaultSpace),
 
-            HProfileMenuIcon(text: 'Explore Cuisines',isImageIcon: true,imageIcon: HImages.forkSpoonIcon),
-            HProfileMenuIcon(icon: Iconsax.star, text: 'Rate & Review'),
-            HProfileMenuIcon(icon: Icons.help_outline_sharp, text: 'Help'),
+            HProfileMenuIcon(text: 'Explore Cuisines',isImageIcon: true,imageIcon: HImages.forkSpoonIcon, onPressed: () {  },),
+            HProfileMenuIcon(icon: Iconsax.star, text: 'Rate & Review', onPressed: () {  },),
+            HProfileMenuIcon(icon: Icons.help_outline_sharp, text: 'Help', onPressed: () {  },),
             
-            HProfileMenuIcon(text: 'Logout',icon: Iconsax.logout,)
+            HProfileMenuIcon(text: 'Logout',icon: Iconsax.logout, onPressed: () {  },)
           ],
         ),
       ),

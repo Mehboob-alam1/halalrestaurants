@@ -17,6 +17,10 @@ class HImages{
   static const String staticSuccessIllustration = "assets/animations/sammy-line-success.png";
   static const String successAnimation = "assets/animations/success.json";
   static const String forkSpoonIcon = "assets/icons/fork_icon.png";
+  static const String userProfileImage = "assets/images/user_profile.png";
+  static const String beenIcon = "assets/images/been_icon.png";
+  static const String recForYouIcon = "assets/images/rec_for_you.png";
+  static const String wantToTryIcon = "assets/images/want_to_try.png";
 
 
 
