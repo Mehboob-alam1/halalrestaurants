@@ -8,6 +8,7 @@ import '../../../../../common/widgets/login_signup/header.dart';
 import '../../../../../utils/constants/HSizes.dart';
 import '../../../../../utils/constants/image_string.dart';
 import '../../../../../utils/constants/text_strings.dart';
+import '../../../controllers/password/reset_password_controller.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({
@@ -16,6 +17,7 @@ class ForgotPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller= Get.put(ResetPasswordController());
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +46,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   child: SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                          onPressed: ()=> Get.to(()=> const ResetPasswordScreen()),
+                          onPressed: ()=>  controller.resetPassword(),
                           child: Text(HTexts.sendCode,
                               style: Theme.of(context).textTheme.headlineSmall))),
                 ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:halalrestaurants/common/widgets/appbar/app_bar.dart';
+import 'package:halalrestaurants/features/personalization/controllers/user_controller.dart';
+import 'package:halalrestaurants/features/personalization/screens/settings/profile/edit_profile.dart';
 import 'package:halalrestaurants/features/personalization/screens/settings/profile/widgets/follower_section.dart';
 import 'package:halalrestaurants/features/personalization/screens/settings/profile/widgets/rounded_container_text_button.dart';
 import 'package:halalrestaurants/features/personalization/screens/settings/profile/widgets/row_icon_text.dart';
@@ -7,17 +10,22 @@ import 'package:halalrestaurants/utils/constants/HSizes.dart';
 import 'package:halalrestaurants/utils/constants/image_string.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'widgets/colum_text.dart';
+import '../../../../../common/widgets/images/h_circular_image.dart';
+import '../../../../../utils/shimmer/h_shimmer_effect.dart';
+
+
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
+
     return Scaffold(
-      appBar: const HAppBar(
+      appBar:  HAppBar(
         showBackArrow: true,
-        title: Text('Assy Barry'),
+        title: Text(controller.user.value.name),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -25,12 +33,22 @@ class ProfileScreen extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-                const CircleAvatar(
-                  backgroundImage: AssetImage(HImages.userProfileImage),
-                  radius: 45,
-                ),
+                Obx( () {
+                  final netWorkImage= controller.user.value.profilePicture;
+                  final image = netWorkImage.isNotEmpty ? netWorkImage : HImages.userProfileImage;
+
+
+                  return controller.imageUploading.value ? const HShimmerEffect(width: 100, height: 100,radius: 100,):
+                  HCircularImage(
+                    image: image,
+                    width: 100,
+                    height: 100,
+                    isNetworkImage: netWorkImage.isNotEmpty,
+
+                  );
+                }),
                 const SizedBox(height: HSizes.sm),
-                Text('@username123',
+                Text("@${controller.user.value.userName}",
                     style: Theme.of(context).textTheme.bodyMedium),
                 const SizedBox(height: HSizes.sm),
                 Text('Member since September 2024',
@@ -40,7 +58,7 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     OutlinedButton(
-                        onPressed: () {},
+                        onPressed: ()=> Get.to(()=>const EditProfileScreen()),
                         child: Text('Edit profile',
                             style: Theme.of(context).textTheme.labelLarge)),
                     const SizedBox(width: HSizes.defaultSpace),

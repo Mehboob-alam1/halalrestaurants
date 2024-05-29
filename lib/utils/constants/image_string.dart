@@ -21,6 +21,7 @@ class HImages{
   static const String beenIcon = "assets/images/been_icon.png";
   static const String recForYouIcon = "assets/images/rec_for_you.png";
   static const String wantToTryIcon = "assets/images/want_to_try.png";
+  static const String cameraEditProfile = "assets/icons/img_camera.png";
 
 
 

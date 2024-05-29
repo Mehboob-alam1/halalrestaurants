@@ -28,44 +28,60 @@ class ResetPasswordPage extends StatelessWidget {
             Text(
               HTexts.resetPasswordSubTitle,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleSmall,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .titleSmall,
             ),
             const SizedBox(height: HSizes.spaceBtwItems),
 
-            /// Password
-            TextFormField(
-              decoration: const InputDecoration(
-                  prefixIcon: Icon(Iconsax.password_check),
-                  labelText: HTexts.password,
-                  suffixIcon: Icon(Iconsax.eye_slash)),
-            ),
-            const SizedBox(height: HSizes.spaceBtwInputFields),
+            Form(
+              child: Column(
+              children: [
+                /// Password
+                TextFormField(
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.password_check),
+                      labelText: HTexts.password,
+                      suffixIcon: Icon(Iconsax.eye_slash)),
+                ),
+                const SizedBox(height: HSizes.spaceBtwInputFields),
 
-            /// Confirm password
-            TextFormField(
-              decoration: const InputDecoration(
-                  prefixIcon: Icon(Iconsax.password_check),
-                  labelText: HTexts.confirmPassword,
-                  suffixIcon: Icon(Iconsax.eye_slash)),
+                /// Confirm password
+                TextFormField(
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Iconsax.password_check),
+                      labelText: HTexts.confirmPassword,
+                      suffixIcon: Icon(Iconsax.eye_slash)),
+                ),
+              ],
             ),
+            ),
+
+
             const SizedBox(height: HSizes.spaceBtwSections),
             Padding(
               padding: HSpacingStyle.paddingNotOnlyTop,
               child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () => Get.to(
-                            () => SuccessScreen(
-                              image: HImages.appLogo,
-                              title: HTexts.passwordChanged,
-                              subtitle: HTexts.passwordChangedSubTitle,
+                      onPressed: () =>
+                          Get.to(
+                                () =>
+                                SuccessScreen(
+                                  image: HImages.successAnimation,
+                                  title: HTexts.passwordChanged,
+                                  subtitle: HTexts.passwordChangedSubTitle,
 
-                              onPressed: () =>
-                                  Get.offAll(() => const LoginScreen()),
-                            ),
+                                  onPressed: () =>
+                                      Get.offAll(() => const LoginScreen()),
+                                ),
                           ),
                       child: Text(HTexts.resetPassword,
-                          style: Theme.of(context).textTheme.headlineSmall))),
+                          style: Theme
+                              .of(context)
+                              .textTheme
+                              .headlineSmall))),
             ),
           ],
         ),

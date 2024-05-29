@@ -30,6 +30,7 @@ class HTexts{
   static const String resendEmail='Resend Email';
   static const String rememberMeEmail='REMEMBER_ME_EMAIL';
   static const String rememberMePassword='REMEMBER_ME_PASSWORD';
+  static const String save='Save';
 
 
 

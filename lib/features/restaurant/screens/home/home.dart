@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:halalrestaurants/common/styles/spacing_styles.dart';
 import 'package:halalrestaurants/common/widgets/text/section_heading.dart';
 import 'package:halalrestaurants/features/restaurant/screens/home/widgets/home_app_bar.dart';
@@ -7,12 +9,15 @@ import 'package:halalrestaurants/utils/constants/image_string.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../utils/constants/colors.dart';
+import '../../../personalization/controllers/user_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final userController = Get.put(UserController());
+
     return Scaffold(
       body: SingleChildScrollView(
 

@@ -3,13 +3,15 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../../../../utils/constants/HSizes.dart';
 
-
 class HRowIconsText extends StatelessWidget {
   const HRowIconsText({
-    super.key, required this.iconData, required this.title, required this.value,
+    super.key,
+    required this.iconData,
+    required this.title,
+    required this.value,
   });
 
-final IconData iconData;
+  final IconData iconData;
   final String title;
   final String value;
 
@@ -22,17 +24,15 @@ final IconData iconData;
         children: [
           Row(
             children: [
-             Icon(iconData),
+              Icon(iconData),
               const SizedBox(width: HSizes.md),
-              Text(title,style: Theme.of(context).textTheme.bodyMedium),
+              Text(title, style: Theme.of(context).textTheme.bodyMedium),
             ],
           ),
           Row(
             children: [
-
-              Text(value,style: Theme.of(context).textTheme.titleMedium),
+              Text(value, style: Theme.of(context).textTheme.titleMedium),
               const SizedBox(width: HSizes.sm),
-
               const Icon(Iconsax.arrow_right_3)
             ],
           )

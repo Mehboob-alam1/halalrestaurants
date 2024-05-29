@@ -15,7 +15,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         children: [
           UpperPattern(),
           LowerPattern(),
-          ForgotPasswordPage()
+          ForgotPasswordPage(),
         ],
       ),
     );

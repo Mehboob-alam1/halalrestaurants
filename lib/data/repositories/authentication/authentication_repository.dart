@@ -20,6 +20,9 @@ class AuthenticationRepository extends GetxController {
   final deviceStorage = GetStorage();
   final _auth = FirebaseAuth.instance;
 
+  User? get authUser => _auth.currentUser;
+
+
   @override
   void onReady() {
     super.onReady();
@@ -156,7 +159,26 @@ class AuthenticationRepository extends GetxController {
 
 
 
-  /// GOogle authentication
+  /// Update User Password
+
+  Future<void> updateUserPassword(String password) async{
+
+
+    try{
+
+      await authUser!.updatePassword(password);
+    }on FirebaseAuthException catch (e) {
+      throw HFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw HFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const HFormatException();
+    } on PlatformException catch (e) {
+      throw HPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
 
 
 }
